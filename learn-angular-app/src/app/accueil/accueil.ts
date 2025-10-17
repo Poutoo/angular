@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { NgForOf } from "../../../node_modules/@angular/common/common_module.d";
+import { CommonModule } from '@angular/common'; // Ajoute cette ligne
+import { DataSercice } from '../data'; // Corrige le chemin et le nom de la classe
 
 @Component({
   selector: 'app-accueil',
-  imports: [NgForOf],
+  imports: [CommonModule],
   templateUrl: './accueil.html',
   styleUrl: './accueil.css'
 })
@@ -13,6 +14,8 @@ export class AccueilComponent {
     nom ="User";
     isVisible = true;
     items = ['Pomme', 'Banane', 'Orange'];
+
+  constructor(public dataService: DataSercice) {}
 
     incrementer() {
         this.compteur++;

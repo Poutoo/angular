@@ -3,6 +3,8 @@
 <p *ngIf="isVisible">Compteur : {{ compteur }}</p>
 <button (click)="incrementer()">Incrémenter</button>
 <button (click)="toggleVisibility()">Afficher/Masquer</button>
-<ul>
-    <li *ngFor="let item of items">{{ item }}</li>
+<button (click)="toggleVisibility()">Afficher/Cacher la liste</button>
+<ul *ngIf="isVisible">
+    <li *ngFor="let item of dataService.getItems()">{{ item }}</li>
 </ul>
+<p>{{ dataService.getGreeting() }} </p>
