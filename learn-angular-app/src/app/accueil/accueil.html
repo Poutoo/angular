@@ -1,0 +1,8 @@
+<h2>{{ message }}</h2>
+<p>Bonjour {{ nom }} </p>
+<p *ngIf="isVisible">Compteur : {{ compteur }}</p>
+<button (click)="incrementer()">Incrémenter</button>
+<button (click)="toggleVisibility()">Afficher/Masquer</button>
+<ul>
+    <li *ngFor="let item of items">{{ item }}</li>
+</ul>
